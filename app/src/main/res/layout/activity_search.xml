@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- 검색바 -->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:background="@drawable/search_background"
+
+        android:queryHint="입력해주세요"
+
+        app:iconifiedByDefault="false"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 카테고리 -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategory"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+
+        android:layout_marginTop="12dp"
+
+        tools:listitem="@layout/item_category"
+
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 최근 검색어 제목 -->
+
+    <TextView
+        android:id="@+id/txtRecentSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="최근 검색어"
+        android:textStyle="bold"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintTop_toBottomOf="@id/recyclerCategory"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <!-- 전체 삭제 -->
+
+    <TextView
+        android:id="@+id/txtDeleteAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="전체 삭제"
+        android:textColor="#1E4DFF"
+        android:textSize="12sp"
+
+        android:layout_marginEnd="16dp"
+
+        app:layout_constraintTop_toTopOf="@id/txtRecentSearch"
+        app:layout_constraintBottom_toBottomOf="@id/txtRecentSearch"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 최근 검색어 RecyclerView -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRecentSearch"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+
+        android:layout_marginTop="12dp"
+
+        tools:listitem="@layout/item_recent_search"
+
+        app:layout_constraintTop_toBottomOf="@id/txtRecentSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 최근 본 책 -->
+
+    <TextView
+        android:id="@+id/txtRecentBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="최근 본 책"
+        android:textStyle="bold"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintTop_toBottomOf="@id/recyclerRecentSearch"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <!-- 최근 본 책 RecyclerView -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRecentBook"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+
+        android:layout_marginTop="8dp"
+
+        tools:listitem="@layout/item_recent_book"
+
+        app:layout_constraintTop_toBottomOf="@id/txtRecentBook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- 하단 네비게이션 -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:itemIconTint="#1E4DFF"
+        app:itemTextColor="#1E4DFF"
+
+        app:itemIconSize="24dp"
+
+        app:labelVisibilityMode="labeled"
+
+        app:menu="@menu/bottom_menu"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
