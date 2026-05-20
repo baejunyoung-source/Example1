@@ -31,7 +31,8 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = products.get(position);
         holder.txtTitle.setText(product.getTitle());
-        holder.txtSeller.setText(product.getSeller());
+        holder.txtAuthor.setText(product.getAuthor());
+        holder.txtPublisher.setText(product.getPublisher());
         holder.txtPrice.setText(product.getPrice());
         holder.imgBook.setImageResource(product.getImageResId());
     }
@@ -44,14 +45,16 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgBook;
         TextView txtTitle;
-        TextView txtSeller;
+        TextView txtAuthor;
+        TextView txtPublisher;
         TextView txtPrice;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgBook = itemView.findViewById(R.id.imgBook);
             txtTitle = itemView.findViewById(R.id.txtTitle);
-            txtSeller = itemView.findViewById(R.id.txtSeller);
+            txtAuthor = itemView.findViewById(R.id.txtAuthor);
+            txtPublisher = itemView.findViewById(R.id.txtPublisher);
             txtPrice = itemView.findViewById(R.id.txtPrice);
         }
     }
