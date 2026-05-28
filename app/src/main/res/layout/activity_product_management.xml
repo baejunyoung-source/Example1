@@ -75,9 +75,10 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listViewProducts"
         android:layout_width="413dp"
         android:layout_height="632dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="99dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="99dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
