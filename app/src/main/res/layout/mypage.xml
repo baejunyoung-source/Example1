@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -14,10 +13,10 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,47 +47,49 @@
                         <ImageView
                             android:layout_width="56dp"
                             android:layout_height="56dp"
-                            android:src="@drawable/ic_person"/>
+                            android:src="@drawable/ic_person" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="돌고래 먹이"
                                 android:textSize="18sp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:text="2026년 1월 가입"
-                                android:textSize="13sp"
                                 android:textColor="#777777"
-                                android:layout_marginTop="4dp"/>
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
                                 android:text="학교 인증 완료"
-                                android:textSize="13sp"
                                 android:textColor="#777777"
-                                android:layout_marginTop="2dp"/>
+                                android:textSize="13sp" />
 
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <Button
+                        android:id="@+id/profileButton"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:text="프로필 수정"
                         android:layout_marginTop="16dp"
-                        android:backgroundTint="#1E4DFF"/>
+                        android:backgroundTint="#1E4DFF"
+                        android:text="프로필 수정"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                 </LinearLayout>
 
@@ -114,8 +115,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -128,31 +129,31 @@
                                 android:layout_height="wrap_content"
                                 android:text="거래 명예 레벨"
                                 android:textSize="16sp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
                                 android:text="Lv.4 명예 거래자"
                                 android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="12dp"/>
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:text="다음 레벨까지 거래 3회 남음"
-                                android:textSize="13sp"
                                 android:textColor="#777777"
-                                android:layout_marginTop="4dp"/>
+                                android:textSize="13sp" />
 
                         </LinearLayout>
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/lv4"
-                            android:scaleType="fitCenter"/>
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lv4" />
 
                     </LinearLayout>
 
@@ -161,7 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="8dp"
                         android:layout_marginTop="12dp"
-                        android:progress="65"/>
+                        android:progress="65" />
 
                 </LinearLayout>
 
@@ -189,17 +190,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="309dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="상품관리"
                             android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/imageButton2"
                             android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@android:drawable/ic_media_next"/>
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:rotationY="180"
+                            app:srcCompat="@drawable/icon"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     </LinearLayout>
 
@@ -211,7 +217,7 @@
                         android:layout_height="100dp"
                         android:layout_marginTop="12dp"
                         android:orientation="horizontal"
-                        tools:listitem="@layout/item_product"/>
+                        tools:listitem="@layout/item_product" />
 
                 </LinearLayout>
 
@@ -237,14 +243,16 @@
                         android:layout_height="wrap_content"
                         android:text="키워드"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <Button
+                        android:id="@+id/keywordButton"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:text="키워드 알림 수정"
                         android:layout_marginTop="16dp"
-                        android:backgroundTint="#1E4DFF"/>
+                        android:backgroundTint="#1E4DFF"
+                        android:text="키워드 알림 수정"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                 </LinearLayout>
 
@@ -260,13 +268,13 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
-        app:labelVisibilityMode="labeled"
+        android:layout_height="wrap_content"
         app:itemIconTint="#1E4DFF"
         app:itemTextColor="#1E4DFF"
-        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_menu"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
