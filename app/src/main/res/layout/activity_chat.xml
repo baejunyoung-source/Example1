@@ -51,7 +51,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
+        android:background="#FFFFFF"
         app:itemIconSize="24dp"
+
         app:itemIconTint="#1E4DFF"
 
         app:itemTextColor="#1E4DFF"
@@ -59,7 +61,6 @@
         app:labelVisibilityMode="labeled"
 
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
