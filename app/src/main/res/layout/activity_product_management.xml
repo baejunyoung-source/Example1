@@ -4,19 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true"
+    android:paddingHorizontal="16dp" android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="36dp"
             android:layout_height="34dp"
-            android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
             android:contentDescription="뒤로가기"
             android:padding="2dp"
@@ -28,54 +28,59 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
             android:text="상품관리"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <android.widget.Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="글쓰기"
             android:textColor="#003BFB"
             android:textSize="16sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="167dp"
-        android:layout_height="39dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
 
         <android.widget.Button
             android:id="@+id/button2"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginEnd="4dp"
             android:background="@drawable/bg_blue_outline_rounded"
             android:text="판매중"
+            android:textSize="14sp"
             tools:ignore="TouchTargetSizeCheck" />
 
         <android.widget.Button
             android:id="@+id/button3"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginStart="4dp"
             android:background="@drawable/bg_blue_outline_rounded"
             android:text="판매완료"
+            android:textSize="14sp"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listViewProducts"
-        android:layout_width="413dp"
-        android:layout_height="632dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="match_parent" android:layout_height="0dp"        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:divider="@android:color/transparent" android:dividerHeight="8dp" />
 </LinearLayout>
