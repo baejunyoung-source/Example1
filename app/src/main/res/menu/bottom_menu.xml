@@ -4,27 +4,27 @@
 
     <item
         android:id="@+id/menu_home"
-        android:icon="@drawable/Home"
+        android:icon="@drawable/home"
         android:title="홈" />
 
     <item
         android:id="@+id/menu_chat"
-        android:icon="@drawable/Chat"
+        android:icon="@drawable/chat"
         android:title="채팅" />
 
     <item
         android:id="@+id/menu_add"
-        android:icon="@drawable/Plus"
+        android:icon="@drawable/plus"
         android:title="상품 추가" />
 
     <item
         android:id="@+id/menu_favorite"
-        android:icon="@drawable/Book"
+        android:icon="@drawable/book"
         android:title="찜한 상품" />
 
     <item
         android:id="@+id/menu_mypage"
-        android:icon="@drawable/Poeple"
+        android:icon="@drawable/people"
         android:title="마이페이지" />
 
 </menu>
