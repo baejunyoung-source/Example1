@@ -1,7 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MyApplication_mof" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.MyApplication_mof" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Use light theme even in dark mode since all layouts use hardcoded light colors -->
     </style>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.myapplication_mof;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,13 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
         holder.txtPublisher.setText(product.getPublisher());
         holder.txtPrice.setText(product.getPrice());
         holder.imgBook.setImageResource(product.getImageResId());
+
+        // 상품 클릭 → 상세 화면으로 이동
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
+            intent.putExtra("product", product);
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
