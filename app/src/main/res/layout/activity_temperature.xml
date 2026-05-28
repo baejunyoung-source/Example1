@@ -52,7 +52,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/temperature"
+            android:id="@+id/currentTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -88,7 +88,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/temperature"
+            android:id="@+id/targetTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -124,7 +124,7 @@
         android:background="@drawable/bg_blue_outline_rounded"
         android:ems="10"
         android:inputType="text"
-        android:text="이렇게 평가한 이유를 적어주세요"
+        android:hint="이렇게 평가한 이유를 적어주세요"
         android:textSize="10sp" />
 
     <android.widget.Button
