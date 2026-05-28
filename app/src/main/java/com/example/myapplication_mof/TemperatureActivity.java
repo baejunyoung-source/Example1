@@ -46,10 +46,15 @@ public class TemperatureActivity extends AppCompatActivity {
 
         tvNickName.setText(userNickname + "님의 온도");
         tvTitle.setText(userNickname + "님의 현재 온도입니다");
-        tvCurrentTemperature.setText(currentTemp + "도");
 
+        // 상단 현재 온도 표시 및 프로그레스바 설정
+        tvCurrentTemperature.setText(currentTemp + "도");
         progressBar.setMax(730);
-        seekBar.setProgress(365);
+        progressBar.setProgress((int) (currentTemp * 10)); // 36.5 -> 365 세팅
+
+        // ⭐ SeekBar 범위 설정 (최소 0.0, 중간 36.5, 최대 73.0)
+        seekBar.setMax(730);         // 최대치를 730으로 설정하여 73.0도까지 표현 가능하게 만듦
+        seekBar.setProgress(365);     // 시작할 때 정중앙인 36.5도(365)에 위치하도록 설정
         tvTargetTemperature.setText("36.5도");
 
         btnBack2.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +67,7 @@ public class TemperatureActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // progress가 0~730까지 움직이므로 10.0으로 나누면 0.0 ~ 73.0도가 됩니다!
                 userSelectedTemp = progress / 10.0;
                 tvTargetTemperature.setText(userSelectedTemp + "도");
             }
