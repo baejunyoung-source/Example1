@@ -217,7 +217,7 @@
                         android:layout_height="100dp"
                         android:layout_marginTop="12dp"
                         android:orientation="horizontal"
-                        tools:listitem="@layout/item_product" />
+                        tools:listitem="@layout/item_product_management" />
 
                 </LinearLayout>
 
