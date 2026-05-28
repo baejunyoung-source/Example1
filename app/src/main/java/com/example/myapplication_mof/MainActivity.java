@@ -27,7 +27,6 @@ public class MainActivity extends BaseActivity {
 
         setContentView(R.layout.activity_main);
 
-        // 홈 상품 더미 데이터
         originalProducts = new ArrayList<>(Arrays.asList(
                 new Product("[국내도서] 스프링 부트 4 개발자 되기 + AI: 자바 편", "신선영 지저(글)", "골든래빗(주)", "15,000원", 15000, R.drawable.img_1,
                         "스프링 부트 입문서입니다.\n필기 거의 없고 상태 깨끗합니다.\n성결관 1층에서 직거래 가능합니다.\n\n구매 후 환불은 어렵습니다."),
@@ -48,7 +47,6 @@ public class MainActivity extends BaseActivity {
         recyclerHomeProduct.setLayoutManager(new LinearLayoutManager(this));
         recyclerHomeProduct.setAdapter(productAdapter);
 
-        // 카테고리 RecyclerView + 필터링
         List<String> categories = Arrays.asList(
                 "전체", "신학대학", "인문대학", "사회과학대학",
                 "글로벌 경영기술 대학", "사범대학", "IT공과대학", "예술대학", "파이데이아칼리지"
@@ -58,14 +56,11 @@ public class MainActivity extends BaseActivity {
         recyclerCategory.setAdapter(new CategoryAdapter(categories, category -> {
             displayProducts.clear();
             if (category.equals("전체") || category.equals("IT공과대학")) {
-                // 전체, IT공과대학: 모든 책 표시
                 displayProducts.addAll(originalProducts);
             }
-            // 나머지 카테고리: 해당 카테고리에 책이 없으므로 빈 리스트
             productAdapter.notifyDataSetChanged();
         }));
 
-        // 정렬 버튼
         txtSort = findViewById(R.id.txtSort);
         txtSort.setOnClickListener(v -> {
             PopupMenu popupMenu = new PopupMenu(this, txtSort);
@@ -87,17 +82,14 @@ public class MainActivity extends BaseActivity {
             popupMenu.show();
         });
 
-        // 검색 아이콘 클릭 → 검색 화면
         findViewById(R.id.imgSearch).setOnClickListener(v ->
                 startActivity(new Intent(this, SearchActivity.class)));
 
-        // 알림 아이콘 클릭
         findViewById(R.id.imgNotification).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AlarmActivity.class);
             startActivity(intent);
         });
 
-        // 하단 네비게이션
         setupBottomNavigation(R.id.menu_home);
     }
 }

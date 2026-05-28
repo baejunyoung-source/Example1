@@ -16,7 +16,6 @@ public class FavoriteActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favorite_page);
 
-        // 찜 목록 더미 데이터 (홈 화면 상품과 동일한 데이터)
         List<Product> favorites = Arrays.asList(
                 new Product("[국내도서] 클린 코드", "로버트 마틴(글)", "인사이트", "18,000원", 18000, R.drawable.cleancode,
                         "클린 코드 원서 번역본입니다.\n형광펜 밑줄 약간 있습니다.\n중간고사 이후 사용하지 않아 판매합니다.\n\n택배 거래도 가능합니다. (배송비 별도)"),
@@ -30,7 +29,6 @@ public class FavoriteActivity extends BaseActivity {
         recyclerFavorite.setLayoutManager(new LinearLayoutManager(this));
         recyclerFavorite.setAdapter(new FavoriteAdapter(favorites));
 
-        // 하단 네비게이션
         setupBottomNavigation(R.id.menu_favorite);
     }
 }

@@ -16,7 +16,6 @@ public class ChatActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        // 채팅 목록 더미 데이터
         List<ChatItem> chatItems = Arrays.asList(
                 new ChatItem("주먹밥공이", "2시에 성결관에서 봬요", "1분전", R.drawable.cleancode),
                 new ChatItem("책방지기", "감사합니다 잘 받았어요!", "10분전", R.drawable.structure),
@@ -29,7 +28,6 @@ public class ChatActivity extends BaseActivity {
         recyclerChat.setLayoutManager(new LinearLayoutManager(this));
         recyclerChat.setAdapter(new ChatAdapter(chatItems));
 
-        // 하단 네비게이션
         setupBottomNavigation(R.id.menu_chat);
     }
 }

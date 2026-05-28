@@ -9,8 +9,6 @@
     android:background="#FFFFFF"
     android:fitsSystemWindows="true">
 
-    <!-- 스크롤 영역 -->
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -24,8 +22,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="12dp">
-
-            <!-- 프로필 카드 -->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -96,9 +92,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
-            <!-- 명예 레벨 카드 -->
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,8 +104,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-
-                    <!-- 제목 + lv4 이미지 -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -169,9 +160,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
-            <!-- 내 상품 카드 -->
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -210,8 +198,6 @@
 
                     </LinearLayout>
 
-                    <!-- 가로 RecyclerView -->
-
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerMyProduct"
                         android:layout_width="match_parent"
@@ -223,9 +209,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-            <!-- 키워드 카드 -->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -262,9 +245,6 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-    <!-- 하단 네비게이션 -->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

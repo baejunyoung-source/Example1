@@ -17,8 +17,6 @@
         android:layout_height="90dp"
         android:padding="10dp">
 
-        <!-- 프로필 이미지 -->
-
         <ImageView
             android:id="@+id/imgProfile"
             android:layout_width="60dp"
@@ -30,9 +28,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-
-
-        <!-- 이름 -->
 
         <TextView
             android:id="@+id/txtName"
@@ -49,9 +44,6 @@
             app:layout_constraintStart_toEndOf="@id/imgProfile"
             app:layout_constraintEnd_toStartOf="@id/txtTime"/>
 
-
-        <!-- 마지막 메시지 -->
-
         <TextView
             android:id="@+id/txtMessage"
             android:layout_width="0dp"
@@ -67,9 +59,6 @@
             app:layout_constraintTop_toBottomOf="@id/txtName"
             app:layout_constraintStart_toStartOf="@id/txtName"
             app:layout_constraintEnd_toStartOf="@id/txtTime"/>
-
-
-        <!-- 시간 -->
 
         <TextView
             android:id="@+id/txtTime"

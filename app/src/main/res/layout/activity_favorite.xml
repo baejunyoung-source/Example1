@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:fitsSystemWindows="true">
-
-    <!-- 제목 -->
-
     <TextView
         android:id="@+id/txtFavoriteTitle"
         android:layout_width="wrap_content"
@@ -24,9 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!-- 찜 목록 RecyclerView -->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerFavorite"
         android:layout_width="0dp"
@@ -38,9 +32,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtFavoriteTitle" />
-
-
-    <!-- 하단 네비게이션 -->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

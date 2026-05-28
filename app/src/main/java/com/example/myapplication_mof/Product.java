@@ -7,7 +7,7 @@ public class Product implements Serializable {
     private String author;
     private String publisher;
     private String price;
-    private int priceValue; // 가격순 정렬용
+    private int priceValue;
     private int imageResId;
     private String description;
 

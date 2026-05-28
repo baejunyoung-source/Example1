@@ -37,7 +37,6 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
         holder.txtPrice.setText(product.getPrice());
         holder.imgBook.setImageResource(product.getImageResId());
 
-        // 상품 클릭 → 상세 화면으로 이동
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
             intent.putExtra("product", product);

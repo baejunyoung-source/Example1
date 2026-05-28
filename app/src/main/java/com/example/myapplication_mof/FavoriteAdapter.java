@@ -36,7 +36,6 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         holder.txtPrice.setText(product.getPrice());
         holder.imgBook.setImageResource(product.getImageResId());
 
-        // 클릭 → 상품 상세 화면으로 이동
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
             intent.putExtra("product", product);

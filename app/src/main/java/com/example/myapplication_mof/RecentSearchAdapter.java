@@ -44,14 +44,12 @@ public class RecentSearchAdapter extends RecyclerView.Adapter<RecentSearchAdapte
         String term = searchTerms.get(position);
         holder.txtSearch.setText(term);
 
-        // 검색어 클릭 → 검색 결과 화면으로 이동
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null) {
                 itemClickListener.onItemClick(term);
             }
         });
 
-        // 삭제 버튼
         holder.imgDelete.setOnClickListener(v -> {
             if (deleteListener != null) {
                 deleteListener.onDelete(position);

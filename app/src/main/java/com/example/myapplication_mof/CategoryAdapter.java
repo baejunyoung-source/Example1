@@ -15,7 +15,7 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
     private List<String> categories;
-    private int selectedPosition = 0; // 기본: "전체" 선택
+    private int selectedPosition = 0;
     private OnCategoryClickListener listener;
 
     public interface OnCategoryClickListener {
@@ -44,7 +44,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         String category = categories.get(position);
         holder.txtCategory.setText(category);
 
-        // 선택 상태에 따른 스타일 변경
         if (position == selectedPosition) {
             holder.txtCategory.setTextColor(Color.WHITE);
             GradientDrawable bg = new GradientDrawable();

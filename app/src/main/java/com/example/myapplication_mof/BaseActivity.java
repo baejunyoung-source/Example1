@@ -12,7 +12,6 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // 강제 라이트 모드 — 다크 모드에서 검은 화면 방지
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
     }
@@ -21,10 +20,8 @@ public class BaseActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         if (bottomNav == null) return;
 
-        // 리스너를 먼저 설정한 뒤 선택 항목을 지정해야 한다
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            // selectedItemId가 -1이면 서브 화면이므로 모든 탭 이동 허용
             if (selectedItemId != -1 && itemId == selectedItemId) {
                 return true;
             }
