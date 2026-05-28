@@ -1,5 +1,7 @@
 package com.example.myapplication_mof;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +15,20 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
     private List<String> categories;
+    private int selectedPosition = 0; // 기본: "전체" 선택
+    private OnCategoryClickListener listener;
+
+    public interface OnCategoryClickListener {
+        void onCategoryClick(String category);
+    }
 
     public CategoryAdapter(List<String> categories) {
         this.categories = categories;
+    }
+
+    public CategoryAdapter(List<String> categories, OnCategoryClickListener listener) {
+        this.categories = categories;
+        this.listener = listener;
     }
 
     @NonNull
@@ -28,7 +41,34 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtCategory.setText(categories.get(position));
+        String category = categories.get(position);
+        holder.txtCategory.setText(category);
+
+        // 선택 상태에 따른 스타일 변경
+        if (position == selectedPosition) {
+            holder.txtCategory.setTextColor(Color.WHITE);
+            GradientDrawable bg = new GradientDrawable();
+            bg.setColor(Color.parseColor("#1E4DFF"));
+            bg.setCornerRadius(50f);
+            holder.txtCategory.setBackground(bg);
+        } else {
+            holder.txtCategory.setTextColor(Color.parseColor("#1E4DFF"));
+            GradientDrawable bg = new GradientDrawable();
+            bg.setColor(Color.WHITE);
+            bg.setStroke(2, Color.parseColor("#1E4DFF"));
+            bg.setCornerRadius(50f);
+            holder.txtCategory.setBackground(bg);
+        }
+
+        holder.itemView.setOnClickListener(v -> {
+            int oldPos = selectedPosition;
+            selectedPosition = holder.getAdapterPosition();
+            notifyItemChanged(oldPos);
+            notifyItemChanged(selectedPosition);
+            if (listener != null) {
+                listener.onCategoryClick(category);
+            }
+        });
     }
 
     @Override

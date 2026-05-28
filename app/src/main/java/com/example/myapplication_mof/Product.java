@@ -1,12 +1,15 @@
 package com.example.myapplication_mof;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String title;
     private String author;
     private String publisher;
     private String price;
     private int priceValue; // 가격순 정렬용
     private int imageResId;
+    private String description;
 
     public Product(String title, String author, String publisher, String price, int priceValue, int imageResId) {
         this.title = title;
@@ -15,6 +18,17 @@ public class Product {
         this.price = price;
         this.priceValue = priceValue;
         this.imageResId = imageResId;
+        this.description = "";
+    }
+
+    public Product(String title, String author, String publisher, String price, int priceValue, int imageResId, String description) {
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.price = price;
+        this.priceValue = priceValue;
+        this.imageResId = imageResId;
+        this.description = description;
     }
 
     public String getTitle() { return title; }
@@ -23,4 +37,5 @@ public class Product {
     public String getPrice() { return price; }
     public int getPriceValue() { return priceValue; }
     public int getImageResId() { return imageResId; }
+    public String getDescription() { return description; }
 }

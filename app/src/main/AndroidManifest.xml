@@ -12,22 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_mof" >
         <activity
-            android:name=".AddSelf"
+            android:name=".AddSelfActivity"
             android:exported="false" />
         <activity
-            android:name=".AddIsbn"
+            android:name=".AddIsbnActivity"
             android:exported="false" />
         <activity
-            android:name=".AddBarcode"
+            android:name=".AddBarcodeActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetail"
+            android:name=".ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchResult"
+            android:name=".SearchResultActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatRoom"
+            android:name=".ChatRoomActivity"
             android:exported="false" />
         <activity
             android:name=".SearchActivity"
@@ -43,9 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".FavoriteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

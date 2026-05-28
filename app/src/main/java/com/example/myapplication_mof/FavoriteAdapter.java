@@ -1,6 +1,7 @@
 package com.example.myapplication_mof;
 
 import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,32 +13,30 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.ViewHolder> {
+public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
 
-    private List<Product> products;
+    private List<Product> favorites;
 
-    public HomeProductAdapter(List<Product> products) {
-        this.products = products;
+    public FavoriteAdapter(List<Product> favorites) {
+        this.favorites = favorites;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_home_product, parent, false);
+                .inflate(R.layout.item_favorite, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Product product = products.get(position);
+        Product product = favorites.get(position);
         holder.txtTitle.setText(product.getTitle());
-        holder.txtAuthor.setText(product.getAuthor());
-        holder.txtPublisher.setText(product.getPublisher());
         holder.txtPrice.setText(product.getPrice());
         holder.imgBook.setImageResource(product.getImageResId());
 
-        // 상품 클릭 → 상세 화면으로 이동
+        // 클릭 → 상품 상세 화면으로 이동
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
             intent.putExtra("product", product);
@@ -47,23 +46,21 @@ public class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return favorites.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgBook;
         TextView txtTitle;
-        TextView txtAuthor;
-        TextView txtPublisher;
         TextView txtPrice;
+        TextView txtTime;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgBook = itemView.findViewById(R.id.imgBook);
             txtTitle = itemView.findViewById(R.id.txtTitle);
-            txtAuthor = itemView.findViewById(R.id.txtAuthor);
-            txtPublisher = itemView.findViewById(R.id.txtPublisher);
             txtPrice = itemView.findViewById(R.id.txtPrice);
+            txtTime = itemView.findViewById(R.id.txtTime);
         }
     }
 }
