@@ -32,7 +32,6 @@ public class ChatRoomActivity extends AppCompatActivity {
         findViewById(R.id.btnAdd).setOnClickListener(v ->
                 Toast.makeText(this, "첨부 버튼입니다.", Toast.LENGTH_SHORT).show());
 
-        // ⭐ 예전 토스트 코드는 지우고, 여기에 올바른 위치로 쏙 넣어주었습니다!
         findViewById(R.id.btnReview).setOnClickListener(v -> {
             Intent intent = new Intent(ChatRoomActivity.this, TemperatureActivity.class);
             startActivity(intent);
@@ -40,7 +39,7 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         ImageButton sendButton = findViewById(R.id.btnSend);
         sendButton.setOnClickListener(v -> sendMessage());
-    } // 괄호 위치 체크! onCreate 메서드가 끝나는 부분입니다.
+    }
 
     private void sendMessage() {
         String message = editMessage.getText().toString().trim();
