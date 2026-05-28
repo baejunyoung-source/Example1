@@ -24,7 +24,8 @@ public class BaseActivity extends AppCompatActivity {
         // 리스너를 먼저 설정한 뒤 선택 항목을 지정해야 한다
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            if (itemId == selectedItemId) {
+            // selectedItemId가 -1이면 서브 화면이므로 모든 탭 이동 허용
+            if (selectedItemId != -1 && itemId == selectedItemId) {
                 return true;
             }
 
@@ -49,6 +50,8 @@ public class BaseActivity extends AppCompatActivity {
             return true;
         });
 
-        bottomNav.setSelectedItemId(selectedItemId);
+        if (selectedItemId != -1) {
+            bottomNav.setSelectedItemId(selectedItemId);
+        }
     }
 }

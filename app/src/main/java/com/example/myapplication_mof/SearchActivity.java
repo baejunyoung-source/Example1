@@ -74,7 +74,7 @@ public class SearchActivity extends BaseActivity {
         });
 
         // 하단 네비게이션
-        setupBottomNavigation(R.id.menu_home);
+        setupBottomNavigation(-1);
     }
 
     private void navigateToSearchResult(String query) {
