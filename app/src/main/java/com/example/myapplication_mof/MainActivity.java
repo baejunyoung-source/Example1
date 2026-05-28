@@ -92,8 +92,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, SearchActivity.class)));
 
         // 알림 아이콘 클릭
-        findViewById(R.id.imgNotification).setOnClickListener(v ->
-                Toast.makeText(this, "알림이 없습니다.", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.imgNotification).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AlarmActivity.class);
+            startActivity(intent);
+        });
 
         // 하단 네비게이션
         setupBottomNavigation(R.id.menu_home);
