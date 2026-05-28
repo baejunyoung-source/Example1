@@ -44,6 +44,16 @@
         <activity
             android:name=".FavoriteActivity"
             android:exported="false" />
+        <activity android:name=".AlarmActivity"
+            android:exported="false" />
+        <activity android:name=".KeywordActivity"
+            android:exported="false" />
+        <activity android:name=".ProductManagementActivity"
+            android:exported="false" />
+        <activity android:name=".TemperatureActivity"
+            android:exported="false" />
+        <activity android:name=".EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
