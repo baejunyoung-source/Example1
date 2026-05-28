@@ -54,7 +54,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/profile"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="97dp" />
+        tools:layout_editor_absoluteY="97dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -62,6 +63,7 @@
         android:layout_height="46dp"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/camera"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="221dp"
         tools:layout_editor_absoluteY="165dp" />
 
@@ -72,7 +74,8 @@
         android:text="닉네임"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="222dp" />
+        tools:layout_editor_absoluteY="222dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -81,6 +84,7 @@
         android:background="@drawable/bg_blue_outline_rounded"
         android:ems="10"
         android:inputType="text"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="254dp" />
 

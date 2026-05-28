@@ -52,7 +52,8 @@
         android:layout_height="39dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="57dp">
+        tools:layout_editor_absoluteY="57dp"
+        tools:ignore="MissingConstraints">
 
         <android.widget.Button
             android:id="@+id/button2"
@@ -60,7 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/bg_blue_outline_rounded"
-            android:text="판매중" />
+            android:text="판매중"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <android.widget.Button
             android:id="@+id/button3"
@@ -68,12 +70,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/bg_blue_outline_rounded"
-            android:text="판매완료" />
+            android:text="판매완료"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <ListView
         android:layout_width="413dp"
         android:layout_height="632dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
